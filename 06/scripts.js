@@ -21,33 +21,26 @@ const usuarios = [
     },
 ]
 
-const bichinho = "Lessie";
+function acharDonoDoPet(lista, nomePet) {
 
-function acharDonoDoPet(lista, pet) {
+    let usuarioEncontrado;
 
-    let dono
+    for (let usuario of lista) {
 
-    let achou = false;
-
-    for (let i = 0; i < lista.length; i++) {
-
-
-        if (lista[i].pets.includes(pet)) {
-            achou = true
-            dono = lista[i].nome;
-            break
+        if (usuario.pets.includes(nomePet)) {
+            usuarioEncontrado = usuario;
         }
-
     }
-    if (achou === true) {
 
-        return console.log(`O dono(a) do(a) ${pet} é o(a) ${dono}`);
+    if (usuarioEncontrado) {
+
+        console.log(`O dono(a) do(a) ${nomePet} é o(a) ${usuarioEncontrado.nome}`);
 
     } else {
 
-        return console.log(`Que pena ${pet}, não encontramos seu dono(a)`);
+        console.log(`Que pena ${nomePet}, não encontramos seu dono(a)`);
 
     }
 }
 
-acharDonoDoPet(usuarios, bichinho);
+acharDonoDoPet(usuarios, "Pingo");
