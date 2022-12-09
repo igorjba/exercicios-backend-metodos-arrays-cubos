@@ -1,27 +1,11 @@
 const frutas = ['Banana', 'Maçã', 'Abacaxi', 'Pêra', 'Uva'];
 
-function formatarFrutas(listaDeFrutas) {
+const arrayInverso = frutas.reverse().join(", ");
 
-    let frutasReverse = listaDeFrutas.reverse();
+console.log(arrayInverso);
 
-    let frutasReverseJuntas = frutasReverse.join();
+frutas.shift();
+frutas.pop();
+frutas.push("Melão")
 
-    let arrayfrutasReverseJuntas = frutasReverseJuntas.split(",");
-
-    let frutasOriginal = arrayfrutasReverseJuntas.reverse();
-
-    let resto1frutas = frutasOriginal.splice(0, 1);
-
-    let resto2frutas = frutasOriginal.splice(frutasOriginal.length - 1, 1);
-
-    frutasOriginal === frutasOriginal.splice(frutasOriginal.length, 0, "Melão");
-
-
-
-    console.log(frutasReverseJuntas);
-    console.log(frutasOriginal);
-
-}
-
-formatarFrutas(frutas);
-
+console.log(frutas)
